@@ -1,3 +1,6 @@
+Below is the result of running texttest_fixture.rb against
+the original codebase with 10 upgrades (eg 10 days)
+```
 OMGHAI!
 -------- day 0 --------
 name, sellIn, quality
@@ -130,4 +133,4 @@ Backstage passes to a TAFKAL80ETC concert, 5, 35
 Backstage passes to a TAFKAL80ETC concert, 0, 50
 Backstage passes to a TAFKAL80ETC concert, -5, 0
 Conjured Mana Cake, -7, 0
-
+```

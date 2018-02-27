@@ -43,7 +43,7 @@ describe Item do
       expect(plus5DexterityVest.quality).to eq 8
     end
 
-    it 'expect +5 Dexterity Vest quality not to be 0' do
+    it 'expect +5 Dexterity Vest quality to be 0' do
       15.times{ gilded_rose.update_quality }
       expect(plus5DexterityVest.sell_in).to eq -5
       expect(plus5DexterityVest.quality).to eq 0

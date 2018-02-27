@@ -19,7 +19,7 @@ describe Item do
       expect(agedBrie.quality).to eq 2
     end
 
-    it 'expect sell_in/quality to be -1/4 after 3rd update' do
+    it 'expect quality to degrade twice as quickly once sell_in zeroes' do
       3.times{ gilded_rose.update_quality }
       expect(agedBrie.sell_in).to eq -1
       expect(agedBrie.quality).to eq 4

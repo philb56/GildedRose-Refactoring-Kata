@@ -57,4 +57,18 @@ describe ItemGeneralCase do
     end
   end
 
+  context 'general cases using +5 Dexterity Vest - edge case' do
+    subject(:plus5DexterityVest) { described_class.new(name='+5 Dexterity Vest',
+                                   sell_in=0,
+                                   quality=1) }
+    let :items { [plus5DexterityVest] }
+    let :gilded_rose { GildedRose.new items }
+
+    it 'expect quality to be capped at 0' do
+      gilded_rose.update_quality
+      expect(plus5DexterityVest.sell_in).to eq -1
+      expect(plus5DexterityVest.quality).to eq 0
+    end
+  end
+
 end

@@ -1,6 +1,6 @@
 require_relative '../lib/gilded_rose.rb'
 
-describe Item do
+describe ItemIncreasingQuality do
 
   context "general cases using Aged Brie" do
     subject(:agedBrie) { described_class.new(name="Aged Brie", sell_in=2, quality=0) }
@@ -37,5 +37,16 @@ describe Item do
       expect(agedBrie.quality).to eq 50
     end
 
+  end
+  context "general cases using Aged Brie - edge case" do
+    subject(:agedBrie) { described_class.new(name="Aged Brie", sell_in=0, quality=49) }
+    let :items { [agedBrie] }
+    let :gilded_rose { GildedRose.new items }
+
+    it 'expect quality to be capped at 50' do
+      gilded_rose.update_quality
+      expect(agedBrie.sell_in).to eq -1
+      expect(agedBrie.quality).to eq 50
+    end
   end
 end

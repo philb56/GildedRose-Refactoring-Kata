@@ -1,9 +1,3 @@
-# Backstage passes
-# increases in Quality as it’s SellIn value approaches;
-# Quality increases by 2 when there are 10 days or less
-# Quality increases by 3 when there are 5 days or less
-# Quality drops to 0 after the concert
-
 require_relative '../lib/gilded_rose.rb'
 
 describe Item do

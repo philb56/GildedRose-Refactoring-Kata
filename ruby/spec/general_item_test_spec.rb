@@ -1,10 +1,12 @@
 require_relative '../lib/gilded_rose.rb'
 
-describe Item do
+describe ItemGeneralCase do
 
   context "general cases using +5 Dexterity West" do
 
-    subject(:plus5DexterityVest) { described_class.new(name="+5 Dexterity Vest", sell_in=10, quality=20) }
+    subject(:plus5DexterityVest) { described_class.new(name='+5 Dexterity Vest',
+                                   sell_in=10,
+                                   quality=20) }
     let :items { [plus5DexterityVest] }
     let :gilded_rose { GildedRose.new items }
 
@@ -26,9 +28,9 @@ describe Item do
     end
 
     it 'expect +5 Dexterity Vest to be OK after 2nd update' do
-      2.times{ gilded_rose.update_quality }
-      expect(plus5DexterityVest.sell_in).to eq 8
-      expect(plus5DexterityVest.quality).to eq 18
+      3.times{ gilded_rose.update_quality }
+      expect(plus5DexterityVest.sell_in).to eq 7
+      expect(plus5DexterityVest.quality).to eq 17
     end
 
     it 'expect +5 Dexterity Vest to be OK after 10th update' do

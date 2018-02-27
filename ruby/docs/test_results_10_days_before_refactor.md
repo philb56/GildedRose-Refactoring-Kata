@@ -1,5 +1,5 @@
 Below is the result of running texttest_fixture.rb against
-the original codebase with 10 upgrades (eg 10 days)
+the **original** codebase with 10 upgrades (eg 10 days)
 ```
 OMGHAI!
 -------- day 0 --------

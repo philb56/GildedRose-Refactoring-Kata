@@ -1,6 +1,6 @@
-require_relative '../lib/gilded_rose.rb'
+require_relative '../../lib/gilded_rose.rb'
 
-describe Item do
+describe ItemEscalatingQuality do
 
   context "Quality increases by 1 when there are > 10 days" do
     subject(:backstage) { described_class.new(name="Backstage passes to a TAFKAL80ETC concert",

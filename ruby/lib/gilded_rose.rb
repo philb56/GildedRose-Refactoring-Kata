@@ -1,5 +1,6 @@
-require 'item.rb'
-require 'itemGeneralCase.rb'
+require File.join(File.dirname(__FILE__), 'item')
+require File.join(File.dirname(__FILE__), 'itemGeneralCase')
+require File.join(File.dirname(__FILE__), 'itemStatic')
 class GildedRose
 
   def initialize(items)
@@ -8,14 +9,12 @@ class GildedRose
 
   def update_quality()
     @items.each do |item|
-if item.name == '+5 Dexterity Vest'
-  item.upgrade
-else
+    if item.is_a?(ItemGeneralCase) || item.is_a?(ItemStatic)
+      item.upgrade
+    else
       if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert"
         if item.quality > 0
-          if item.name != "Sulfuras, Hand of Ragnaros"
-            item.quality = item.quality - 1
-          end
+          item.quality = item.quality - 1
         end
       else
         if item.quality < 50
@@ -34,16 +33,14 @@ else
           end
         end
       end
-      if item.name != "Sulfuras, Hand of Ragnaros"
-        item.sell_in = item.sell_in - 1
-      end
+
+      item.sell_in = item.sell_in - 1
+
       if item.sell_in < 0
         if item.name != "Aged Brie"
           if item.name != "Backstage passes to a TAFKAL80ETC concert"
             if item.quality > 0
-              if item.name != "Sulfuras, Hand of Ragnaros"
-                item.quality = item.quality - 1
-              end
+              item.quality = item.quality - 1
             end
           else
             item.quality = item.quality - item.quality
@@ -54,7 +51,7 @@ else
           end
         end
       end
+      end
     end
-end
   end
 end

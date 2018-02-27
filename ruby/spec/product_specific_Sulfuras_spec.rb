@@ -1,6 +1,6 @@
 require_relative '../lib/gilded_rose.rb'
 
-describe Item do
+describe ItemStatic do
   context "Sulfuras, Hand of Ragnaros" do
     subject(:sulfuras) { described_class.new(name="Sulfuras, Hand of Ragnaros", sell_in=0, quality=80) }
     let :items { [sulfuras] }

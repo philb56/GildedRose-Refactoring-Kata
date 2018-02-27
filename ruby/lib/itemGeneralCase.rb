@@ -4,12 +4,18 @@ class ItemGeneralCase < Item
   end
 
   def upgrade_quality
-    @quality -= (@sell_in <= 0 ? 2 : 1 ) if @quality > 0
-    @quality = 0 if @quality < 0 
+    @quality -= quality_increment if @quality > 0
+    @quality = 0 if @quality < 0
   end
 
   def upgrade
     upgrade_quality
     upgrade_sellin
+  end
+
+  private
+
+  def quality_increment
+    @sell_in <= 0 ? 2 : 1
   end
 end

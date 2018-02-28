@@ -22,12 +22,19 @@ My initial approach was to get the gilded_rose class into manageable OO code.
 
 #### Refactoring
 
-In order to do this I first set up integration tests on the GildedRose and Item classes which tested that each requirement from the current spec was tested.
+In order to do this I first set up feature tests on the GildedRose and Item classes which tested that each requirement from the current spec was tested.
 
 Also and prior to refactoring I ran the existing texttest_fixture and saved a copy in /docs - after refactoring I ran it again so output could be compared and there is evidence that the refactor has worked and that my unit tests stand up.
 
-I refactored Item by breaking it first into a general case ItemGeneralCase which inherits from Item. Subsequently I created a new class for each distinct set of rules each of which inherit from my new ItemGeneralCase class.
+I refactored Item by breaking it first into a general case ItemGeneralCase which inherits from Item. Subsequently I used polymorphism, creating a new class for each distinct set of rules each of which inherit from my new ItemGeneralCase class.
 
+#### Adding the Conjure functionality
+
+I used TDD to create the new functionality creating unit tests for each of the new classes
+
+#### Improvements to approach
+
+Whilst refactoring I created 4 new classes inheriting from Item. I used the feature testing that I had built up to prove that the classes were valid. I omitted to create unit tests for the new classes - this was a mistake.
 
 ## How to run rspec Tests
 
@@ -39,7 +46,8 @@ rspec
 ```
 ## How to run existing Tests
 
-```cd ruby
+```
+cd ruby
 ruby './texttest_fixture.rb' 10 > test_results_10_days.txt
 ruby './gilded_rose_tests.rb'
 ```
@@ -58,6 +66,13 @@ ruby './gilded_rose_tests.rb'
 
 ## rubocop
 
+* passes with no offenses
+
 the following files have been excluded from rubocop
 * ./texttest_fixture.rb - need to prove that this produces the same before and after
 * ./lib/item.rb' - fear of the goblin
+
+## To do
+* add unit testing of existing functionality on new classes
+* add more boundary cases for new functionality
+* find a compare facility for before and after results from texttest_fixture.rb and document this in the README

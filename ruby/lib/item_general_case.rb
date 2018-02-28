@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class ItemGeneralCase < Item
-
   def conjured
     @conjured = true
   end

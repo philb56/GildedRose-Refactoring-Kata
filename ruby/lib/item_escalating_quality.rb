@@ -2,9 +2,9 @@
 
 class ItemEscalatingQuality < ItemGeneralCase
   def quality_increment
-    return 1 if @sell_in > 10
-    return 2 if @sell_in > 5
-    return 3 if @sell_in.positive?
+    return 1 * conjure_factor if @sell_in > 10
+    return 2 * conjure_factor if @sell_in > 5
+    return 3 * conjure_factor if @sell_in.positive?
     0
   end
 

@@ -34,7 +34,9 @@ I used TDD to create the new functionality creating unit tests for each of the n
 
 #### Improvements to approach
 
-Whilst refactoring I created 4 new classes inheriting from Item. I used the feature testing that I had built up to prove that the classes were valid. I omitted to create unit tests for the new classes - this was a mistake.
+* Whilst refactoring I created 4 new classes inheriting from Item. I used the feature testing that I had built up to prove that the classes were valid. I omitted to create unit tests for the new classes - this was a mistake.
+
+* I have tested state more than behaviour. Perhaps think harder about this
 
 ## How to run rspec Tests
 
@@ -76,3 +78,4 @@ the following files have been excluded from rubocop
 * add unit testing of existing functionality on new classes
 * add more boundary cases for new functionality
 * find a compare facility for before and after results from texttest_fixture.rb and document this in the README
+* Consider: test behaviour not state. Perhaps that is why there is a to_s method on Item

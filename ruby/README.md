@@ -55,3 +55,9 @@ ruby './gilded_rose_tests.rb'
 * “Aged Brie” actually increases in Quality the older it gets
 * “Sulfuras”, being a legendary item, never has to be sold or decreases in Quality
 * “Backstage passes”, like aged brie, increases in Quality as it’s SellIn value approaches; Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but Quality drops to 0 after the concert
+
+## rubocop
+
+the following files have been excluded from rubocop
+* ./texttest_fixture.rb - need to prove that this produces the same before and after
+* ./lib/item.rb' - fear of the goblin

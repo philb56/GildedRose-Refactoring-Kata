@@ -22,3 +22,8 @@ Style/StringLiteralsInInterpolation:
 
 Style/IndentationConsistency:
  EnforcedStyle: normal
+
+AllCops:
+  Exclude:
+    - './texttest_fixture.rb'
+    - './lib/item.rb'

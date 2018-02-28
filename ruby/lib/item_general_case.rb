@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ItemGeneralCase < Item
   def upgrade_sellin
     @sell_in -= 1

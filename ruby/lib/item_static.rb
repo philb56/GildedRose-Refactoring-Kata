@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ItemStatic < ItemGeneralCase
   def upgrade_sellin
     @sell_in

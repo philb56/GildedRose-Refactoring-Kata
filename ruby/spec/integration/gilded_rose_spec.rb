@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../../lib/gilded_rose.rb'
 describe GildedRose do
   describe '#update_quality' do

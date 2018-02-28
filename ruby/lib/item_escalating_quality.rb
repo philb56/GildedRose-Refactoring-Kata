@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ItemEscalatingQuality < ItemGeneralCase
   def quality_increment
     return 1 if @sell_in > 10

@@ -4,8 +4,8 @@ class ItemGeneralCase < Item
   end
 
   def upgrade_quality
-    @quality -= quality_increment if @quality > 0
-    @quality = 0 if @quality < 0
+    @quality -= quality_increment if @quality.positive?
+    @quality = 0 if @quality.negative?
   end
 
   def upgrade

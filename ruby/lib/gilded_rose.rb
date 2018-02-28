@@ -1,16 +1,14 @@
 require File.join(File.dirname(__FILE__), 'item')
-require File.join(File.dirname(__FILE__), 'itemGeneralCase')
-require File.join(File.dirname(__FILE__), 'itemStatic')
-require File.join(File.dirname(__FILE__), 'itemIncreasingQuality')
-require File.join(File.dirname(__FILE__), 'itemEscalatingQuality')
-
+require File.join(File.dirname(__FILE__), 'item_general_case')
+require File.join(File.dirname(__FILE__), 'item_static')
+require File.join(File.dirname(__FILE__), 'item_increasing_quality')
+require File.join(File.dirname(__FILE__), 'item_escalating_quality')
 class GildedRose
-
   def initialize(items)
     @items = items
   end
 
-  def update_quality()
+  def update_quality
     @items.each { |item| item.upgrade }
   end
 end

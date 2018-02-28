@@ -1,0 +1,24 @@
+Style/Encoding:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 99
+
+AllCops:
+  TargetRubyVersion: 2.4.1
+
+Style/BlockLength:
+ Exclude:
+   - 'spec/**/*.rb'
+
+Documentation:
+ Enabled: false
+
+Style/StringLiterals:
+ Enabled: false
+
+Style/StringLiteralsInInterpolation:
+ Enabled: false
+
+Style/IndentationConsistency:
+ EnforcedStyle: normal

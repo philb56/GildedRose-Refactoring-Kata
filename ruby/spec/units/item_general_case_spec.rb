@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 require_relative '../../lib/gilded_rose.rb'
-
 describe ItemGeneralCase do
   context 'general cases for conjured using +5 Dexterity West' do
-    subject(:plus5DexterityVest) { described_class.new('+5 Dexterity Vest', 10, 20 ) }
-    subject(:plus5DexterityVest2) { described_class.new('+5 Dexterity Vest', 0, 20 ) }
+    subject(:plus5DexterityVest) { described_class.new('+5 Dexterity Vest', 10, 20) }
+    subject(:plus5DexterityVest2) { described_class.new('+5 Dexterity Vest', 0, 20) }
 
     it 'expect conjure_factor to return 1' do
       expect(plus5DexterityVest.conjure_factor).to eq 1
